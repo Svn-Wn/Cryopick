@@ -153,6 +153,25 @@ class UNet(nn.Module):
 # Utility Functions
 # ============================================================================
 
+def load_all_from_dir(data_dir):
+    """Load all images and masks from preprocessed batches"""
+    data_dir = Path(data_dir)
+    batch_files = sorted(list(data_dir.glob("batch_*.npz")))
+
+    all_images = []
+    all_masks = []
+
+    for batch_file in batch_files:
+        data = np.load(batch_file)
+        images = data['images']
+        if len(images.shape) == 4 and images.shape[3] == 3:
+            images = images.mean(axis=3)
+        all_images.extend(list(images))
+        all_masks.extend(list(data['masks']))
+
+    return all_images, all_masks
+
+
 def coordinates_to_mask(coordinates: List[Tuple[int, int]],
                        image_shape: Tuple[int, int],
                        particle_radius: int) -> np.ndarray:

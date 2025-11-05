@@ -1,0 +1,11 @@
+# Minimal dependencies for inference only
+# Install with: pip install -r requirements_inference.txt
+
+torch>=2.0.0
+numpy>=1.24.0
+opencv-python>=4.8.0
+tqdm>=4.65.0
+
+# Optional (for different image formats)
+# mrcfile>=1.4.0  # For .mrc cryo-EM files
+# pillow>=10.0.0  # For additional image formats

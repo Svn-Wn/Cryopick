@@ -1,0 +1,104 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv/
+env.bak/
+venv.bak/
+
+# PyTorch Models (too large for GitHub)
+*.pth
+*.pt
+# Exception: include final models if using Git LFS
+!experiments/unet_improved_v1/iteration_1_selftrain/model.pt
+
+# Data (gigabytes)
+data/
+datasets/
+*.mrc
+*.rec
+*.st
+*.ali
+*.star
+*.box
+*.cbox
+*.coord
+
+# Logs
+*.log
+*.out
+*.err
+logs/
+tensorboard_logs/
+runs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Training outputs (intermediate checkpoints)
+experiments/*/iteration_*/
+!experiments/*/iteration_*/metrics.json
+!experiments/*/iteration_*/visualization.png
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+.cache/
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Documentation build
+docs/_build/
+site/
+
+# Misc
+nohup.out
+*.pkl
+*.pickle
